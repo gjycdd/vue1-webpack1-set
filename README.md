@@ -11,7 +11,7 @@
   - [搭建vue页面](#搭建vue页面)
   - [配置路由](#配置路由)
   - [配置入口文件](#配置入口文件)
-  - [配置App.vue和index.html](配置App.vue和index.html)
+  - [配置App.vue和index.html](配置appvue和indexhtml)
 * [特别鸣谢](#特别鸣谢)
 
 ## 前言
