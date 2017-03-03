@@ -8,6 +8,7 @@
   - [初始化](#初始化)
   - [安装基础包](#安装基础包)
   - [初步配置webpack](#初步配置webpack)
+  - [搭建vue页面](#搭建vue页面)
 * [特别鸣谢](#特别鸣谢)
 
 ## 前言
@@ -82,6 +83,39 @@
      }
 >在以上配置保存后可以打开命令行（win+r）或者你的git工具到项目跟目录下运行 `npm run dev` <br />
 >访问 **localhost:8080**（提前在index.html中写入内容确认是否成功）
+
+#### [return top](#目录)
+
+### 搭建vue页面
+#### 在搭建vue页面之前我们来学习一下vue文件的结构(老司机请自动忽略)
+    <template></template> //请务必记住template内一般只允许存在一个节点
+    <script>
+     export default {
+          name: '',
+          data () {  //当存在data时，必须有return
+               return {}
+          }
+     }
+    </script>
+    <style>可以在这里写css,前提是已经安装css-loader</style>
+####我们需要在views下搭建两个vue页面，为接下来router的配置做准备
+    <template>
+         <div>
+              <h1>This is {{pageName}} page</h1>
+        </div>
+    </template>
+    <script>
+         export default {
+              name: 'home',
+              data () {
+                   return {
+                        pageName: 'home'
+                   }
+              }
+         }
+    </script>
+    <style></style>
+>相似的我们再创建一个test页面
 
 #### [return top](#目录)
 
