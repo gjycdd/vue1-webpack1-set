@@ -11,7 +11,9 @@
   - [搭建vue页面](#搭建vue页面)
   - [配置路由](#配置路由)
   - [配置入口文件](#配置入口文件)
-  - [配置App.vue和index.html](配置appvue和indexhtml)
+  - [配置App.vue和index.html](#配置appvue和indexhtml)
+  - [配置loader](#配置loader)
+* [结束语](#结束语)
 * [特别鸣谢](#特别鸣谢)
 
 ## 前言
@@ -149,7 +151,7 @@
 #### [return top](#目录)
 
 ### 配置App.vue和index.html
-### App.vue
+#### App.vue
     <template>
         <div>
             <!-- 请注意，下列写法在vue2中已经被舍弃 -->
