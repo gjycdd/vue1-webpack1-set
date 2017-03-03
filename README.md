@@ -27,12 +27,15 @@
 >安装cnpm淘宝镜像 传送门（http://npm.taobao.org/）<br />
 > 安装yarn 传送门(https://yarnpkg.com/zh-Hans/docs/install#windows-tab)
 
+#### [return top](#目录)
+
 ## 正式开始
 ### 初始化
 >利用npm初始化package.json，来管理安装的包<br />
 `npm init`
 <br />可以对项目进行定义
 
+#### [return top](#目录)
 ### 安装基础包
 #### 安装vue1
 `npm install vue@1 --save-dev`
@@ -40,9 +43,11 @@
 `npm install vue-loader@8.7.0 --save-dev`
 >安装结束后可能会提示缺少某些包，没关系，按照提示全部安装一遍或者暂时忽略稍后安装也是可行的。<br />
 > 值得注意的是 __vue-loader__ 大于10.0.0的版本和小于 10.0.0的版本在后续安装依赖插件是有区别的，如果安装错误版本可能会出现 **cannot read property 'indexOf' of undefined**
+
 #### 安装vue-router
 `npm install vue-router@0.7.13 --save-dev`
 >__vue-router2与1有着极大的差别，请各位注意__
+
 #### 安装webpack1
 `npm install webpack@1 --save-dev`
 #### 安装webpack-dev-server
