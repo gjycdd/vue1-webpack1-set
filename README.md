@@ -7,6 +7,7 @@
 * 正式开始
   - [初始化](#初始化)
   - [安装基础包](#安装基础包)
+  - [初步配置webpack](#初步配置webpack)
 * [特别鸣谢](#特别鸣谢)
 
 ## 前言
@@ -65,6 +66,22 @@
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| --- router.js&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//项目的router配置文件<br />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| --- components&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//各个组件文件夹<br />
   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| --- views&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//各个vue存放的文件夹<br />
+
+#### [return top](#目录)
+
+### 初步配置webpack
+####配置入口
+    module.exports = {
+        entry:  './src/main.js'
+    }
+####配置热加载
+>在package.json中进行配置
+
+    "scripts": {
+        "dev": "webpack-dev-server --inline --hot --open"
+     }
+>在以上配置保存后可以打开命令行（win+r）或者你的git工具到项目跟目录下运行 `npm run dev` <br />
+>访问 **localhost:8080**（提前在index.html中写入内容确认是否成功）
 
 #### [return top](#目录)
 
