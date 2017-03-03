@@ -9,6 +9,7 @@
   - [安装基础包](#安装基础包)
   - [初步配置webpack](#初步配置webpack)
   - [搭建vue页面](#搭建vue页面)
+  - [配置路由](#配置路由)
 * [特别鸣谢](#特别鸣谢)
 
 ## 前言
@@ -117,6 +118,19 @@
     <style></style>
 >相似的我们再创建一个test页面
 
+#### [return top](#目录)
+
+### 配置路由
+>在vue-router1中我们需要调用router.map({})配置路由（在2.x版本中已经有更简单的方法了），为了方便后期维护我们将map单独的抽取到router.js中，在外部我们需要使用的时候就调用require('./router')(router)。需要文档的小伙伴可以戳这里(  [vue-router@1.x官方文档](https://github.com/vuejs/vue-router/tree/1.0/docs/zh-cn) )
+
+    module.exports = function (router) {
+         router.map({
+              '/': {
+                   name: 'home',
+                   component: require('./views/home.vue')
+              }
+         })
+    }
 #### [return top](#目录)
 
 ## 特别鸣谢
