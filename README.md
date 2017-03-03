@@ -2,13 +2,12 @@
 
 ## 目录
 * [前言](#前言)
-* [特别鸣谢](#特别鸣谢)
 * 准备工作
   - [安装node](#安装node)
 * 正式开始
   - [初始化](#初始化)
   - [安装基础包](#安装基础包)
-
+* [特别鸣谢](#特别鸣谢)
 
 ## 前言
 
@@ -53,6 +52,19 @@
 #### 安装webpack-dev-server
 `npm install webpack-dev-server --save-dev`
 >安装webpack热加载模块( __轻量级的express服务器便于调试__ )，修改文件实时刷新网页，免除修改一次代码就要重新打包刷新网页的麻烦
+
+#### [return top](#目录)
+
+### 构建目录结构
+> | --- package.json         //包管理文件<br />
+  | --- index.html             // 启动页<br />
+  | --- webpack.config.js // webpack配置文件<br />
+  | --- src<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| --- App.vue        //项目的入口页面<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| --- main.js          //项目的<br />入口js<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| --- router.js        //项目的router配置文件<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| --- components //各个组件文件夹<br />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| --- views             //各个vue存放的文件夹<br />
 
 #### [return top](#目录)
 
