@@ -10,6 +10,8 @@
   - [初步配置webpack](#初步配置webpack)
   - [搭建vue页面](#搭建vue页面)
   - [配置路由](#配置路由)
+  - [配置入口文件](#配置入口文件)
+  - [配置App.vue和index.html](配置App.vue和index.html)
 * [特别鸣谢](#特别鸣谢)
 
 ## 前言
@@ -131,6 +133,94 @@
               }
          })
     }
+#### [return top](#目录)
+
+### 配置入口文件
+>在main.js中我们需要这么配置
+
+    import Vue from 'vue';
+    import VueRouter from 'vue-router';
+    var App = require('./App.vue');
+    Vue.use(VueRouter);
+    var router = new VueRouter();
+    require('./router')(router);
+    router.start(App, '#app');
+
+#### [return top](#目录)
+
+### 配置App.vue和index.html
+### App.vue
+    <template>
+        <div>
+            <!-- 请注意，下列写法在vue2中已经被舍弃 -->
+            <a v-link="{path: '/home'}">Home</a>
+            <a v-link="{path: '/test'}">Test</a>
+            //视图加载的挂载点
+            <router-view></router-view>
+        </div>
+    </template>
+    <script></script>
+    <style></style>
+#### index.html
+    <body>
+         <div id='app'></div>
+         <script src='dist/build.js'></script>
+    </body >
+#### [return top](#目录)
+
+### 配置loader
+>在配置之前我们需要安装一些缺少的package
+
+    npm install babel-core --save-dev
+
+    npm install babel-loader --save-dev
+
+    npm install babel-plugin-transform-runtime --save-dev
+
+    npm install babel-preset-es2015 --save-dev
+
+    npm install vue-hot-reload-api@1.3.3 --save-dev
+
+    npm install vue-html-loader@1.2.4 --save-dev
+
+    npm install vue-style-loader --save-dev
+
+    npm install css-loader --save-dev
+>这些包安装好以后我们就可以开始配置webpack.config.js文件了
+
+#### webpack.config.js
+    var path = require('path');
+    module.exports = {
+        entry: './src/main.js',
+        output: {
+            path: path.resolve(__dirname, './dist'),
+            publicPath: '/dist/',
+            filename: 'build.js'
+        },
+        module: {
+            loaders: [
+                {
+                    test: /\.vue$/,         //解析vue文件
+                    loader: 'vue'
+                },{
+                    test: /\.css$/,         //配置以保证外部css文件的加载
+                    loader: 'vue-style!css'
+                },
+                {
+                    test: /\.js$/,            //使得webpack能够将es6的语法转换成es5
+                    loader: "babel-loader?presets[]=es2015&plugins[]=transform-runtime&comments=false",
+                    exclude: /node_modules/
+                }
+            ]
+        }
+    }
+>现在我们可以放心的`npm run dev`了
+#### [return top](#目录)
+
+## 结束语
+>这个教程是根据我自己亲身配置得出的，其中踩了不少坑，希望能因为这个教程让新手们少踩点坑，愉快的自食其力。<br />
+> 当然我的教程还没有完全配置完成，例如sass等预编译语言的配置，还有图片加载的url-loader的配置，但是这些配置总的来说大同小异，所以我就不一一赘述了，希望能够帮到你。<br />
+> Thanks
 #### [return top](#目录)
 
 ## 特别鸣谢
